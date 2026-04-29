@@ -1,0 +1,258 @@
+/* =========================================================
+   NØR Station — Colors, Type & Foundations
+   Reconstructed from norstation.com (yellow / slate brand)
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  /* ---------- Color: Brand ---------- */
+  --nor-yellow:      #F2E07A;   /* primary brand surface */
+  --nor-yellow-deep: #E6CF5C;   /* hover / pressed */
+  --nor-slate:       #6E7B86;   /* neutral / contrast surface */
+  --nor-slate-deep:  #4E5963;   /* dark slate */
+  --nor-ink:         #2A2A2A;   /* type — soft black, never pure */
+  --nor-ink-deep:    #1A1A1A;   /* on yellow, occasionally pure ink */
+  --nor-paper:       #FFFFFF;   /* white surface */
+  --nor-paper-warm:  #FAF6E8;   /* very pale yellow tint */
+
+  /* ---------- Color: Semantic neutrals ---------- */
+  --nor-fg-1:    var(--nor-ink);          /* primary text */
+  --nor-fg-2:    rgba(42,42,42,0.72);     /* secondary text */
+  --nor-fg-3:    rgba(42,42,42,0.48);     /* tertiary / captions */
+  --nor-fg-mute: rgba(42,42,42,0.22);     /* hairlines, dividers */
+
+  --nor-bg-1: var(--nor-paper);           /* page bg (white) */
+  --nor-bg-2: var(--nor-yellow);          /* signature yellow */
+  --nor-bg-3: var(--nor-slate);           /* slate */
+  --nor-bg-warm: var(--nor-paper-warm);   /* tinted soft */
+  --nor-bg-inverse: var(--nor-slate-deep);
+
+  --nor-fg-on-yellow-1: var(--nor-ink);
+  --nor-fg-on-yellow-2: rgba(42,42,42,0.78);
+  --nor-fg-on-slate-1:  #FAF6E8;
+  --nor-fg-on-slate-2:  rgba(250,246,232,0.72);
+
+  /* ---------- Color: Status (utility, rarely used) ---------- */
+  --nor-success: #4F7D5A;
+  --nor-warning: #C7A23A;
+  --nor-danger:  #B7553B;
+  --nor-info:    #5A7891;
+
+  /* ---------- Type: Families ---------- */
+  --nor-font-display: 'Manrope', 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif;
+  --nor-font-body:    'Manrope', 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif;
+  --nor-font-mono:    ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  /* ---------- Type: Weights ----------
+     The wordmark is THIN linework. Display headlines lean light/regular,
+     not heavy. Bold is reserved for small UI labels. */
+  --nor-w-thin:      200;
+  --nor-w-light:     300;
+  --nor-w-regular:   400;
+  --nor-w-medium:    500;
+  --nor-w-semibold:  600;
+  --nor-w-bold:      700;
+
+  /* ---------- Type: Sizes (fluid) ---------- */
+  --nor-fs-mega:    clamp(56px, 9vw, 144px);
+  --nor-fs-h1:      clamp(40px, 6vw, 88px);
+  --nor-fs-h2:      clamp(32px, 4.5vw, 64px);
+  --nor-fs-h3:      clamp(22px, 2.6vw, 36px);
+  --nor-fs-h4:      clamp(18px, 1.6vw, 22px);
+  --nor-fs-lead:    clamp(18px, 1.4vw, 22px);
+  --nor-fs-body:    16px;
+  --nor-fs-small:   14px;
+  --nor-fs-eyebrow: 12px;
+  --nor-fs-caption: 11px;
+
+  /* ---------- Type: Tracking ---------- */
+  --nor-tr-tight:    -0.005em;   /* light display still wants room */
+  --nor-tr-normal:    0em;
+  --nor-tr-display:   0.04em;    /* display all-caps gets airy spacing */
+  --nor-tr-eyebrow:   0.18em;
+  --nor-tr-wide:      0.28em;    /* like the "STATION" wordmark */
+
+  /* ---------- Type: Line height ---------- */
+  --nor-lh-display: 1.0;
+  --nor-lh-tight:   1.1;
+  --nor-lh-normal:  1.55;
+  --nor-lh-loose:   1.75;
+
+  /* ---------- Spacing (8px base) ---------- */
+  --nor-s-1:  4px;
+  --nor-s-2:  8px;
+  --nor-s-3:  12px;
+  --nor-s-4:  16px;
+  --nor-s-5:  24px;
+  --nor-s-6:  32px;
+  --nor-s-7:  48px;
+  --nor-s-8:  64px;
+  --nor-s-9:  96px;
+  --nor-s-10: 128px;
+  --nor-s-11: 160px;
+  --nor-s-12: 200px;
+
+  --nor-section-y: clamp(80px, 12vw, 200px);
+  --nor-section-x: clamp(24px, 6vw, 96px);
+
+  /* ---------- Layout ---------- */
+  --nor-container: 1440px;
+  --nor-gutter: clamp(16px, 2vw, 32px);
+  --nor-header-h: 72px;
+
+  /* ---------- Border / radius / shadow ---------- */
+  --nor-hairline: 1px solid var(--nor-ink);
+  --nor-hairline-mute: 1px solid var(--nor-fg-mute);
+  --nor-radius: 0px;
+  --nor-radius-circle: 50%;   /* the brand uses circular crops a lot */
+
+  --nor-shadow-none: none;
+  --nor-shadow-menu: 0 24px 40px -16px rgba(42,42,42,0.10);
+  --nor-shadow-overlay: 0 40px 80px -32px rgba(42,42,42,0.18);
+
+  /* ---------- Motion ---------- */
+  --nor-ease:        cubic-bezier(0.22, 0.61, 0.36, 1);
+  --nor-dur-fast:    150ms;
+  --nor-dur-normal:  300ms;
+  --nor-dur-slow:    600ms;
+}
+
+html, body {
+  background: var(--nor-bg-2); /* yellow is the default brand surface */
+  color: var(--nor-fg-1);
+  font-family: var(--nor-font-body);
+  font-size: var(--nor-fs-body);
+  font-weight: var(--nor-w-light);
+  line-height: var(--nor-lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--nor-font-display);
+  font-weight: var(--nor-w-light);    /* thin linework feel */
+  text-transform: uppercase;
+  letter-spacing: var(--nor-tr-display);
+  line-height: var(--nor-lh-display);
+  margin: 0;
+  color: var(--nor-fg-1);
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--nor-fs-h1); }
+h2 { font-size: var(--nor-fs-h2); }
+h3 { font-size: var(--nor-fs-h3); }
+h4 { font-size: var(--nor-fs-h4); letter-spacing: var(--nor-tr-eyebrow); font-weight: var(--nor-w-medium); }
+h5, h6 {
+  font-size: var(--nor-fs-eyebrow);
+  letter-spacing: var(--nor-tr-eyebrow);
+  font-weight: var(--nor-w-medium);
+}
+
+.nor-mega {
+  font-family: var(--nor-font-display);
+  font-size: var(--nor-fs-mega);
+  font-weight: var(--nor-w-light);
+  text-transform: uppercase;
+  line-height: var(--nor-lh-display);
+  letter-spacing: var(--nor-tr-display);
+  text-wrap: balance;
+}
+
+.nor-eyebrow {
+  font-size: var(--nor-fs-eyebrow);
+  font-weight: var(--nor-w-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--nor-tr-eyebrow);
+  color: var(--nor-fg-2);
+}
+
+.nor-lead {
+  font-size: var(--nor-fs-lead);
+  line-height: var(--nor-lh-normal);
+  color: var(--nor-fg-1);
+  font-weight: var(--nor-w-light);
+  text-wrap: pretty;
+}
+
+p {
+  font-size: var(--nor-fs-body);
+  line-height: var(--nor-lh-loose);
+  font-weight: var(--nor-w-light);
+  color: var(--nor-fg-1);
+  margin: 0 0 1em;
+  text-wrap: pretty;
+}
+
+small, .nor-small { font-size: var(--nor-fs-small); color: var(--nor-fg-2); }
+.nor-caption { font-size: var(--nor-fs-caption); color: var(--nor-fg-3); letter-spacing: var(--nor-tr-eyebrow); text-transform: uppercase; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: opacity var(--nor-dur-fast) var(--nor-ease);
+}
+a:hover { opacity: 0.6; }
+
+code, pre, kbd { font-family: var(--nor-font-mono); font-size: 0.92em; }
+
+hr { border: 0; border-top: var(--nor-hairline); margin: var(--nor-s-7) 0; }
+
+/* ========== Buttons ========== */
+.nor-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nor-s-3);
+  padding: 14px 28px;
+  white-space: nowrap;
+  border: 1px solid var(--nor-ink);
+  background: transparent;
+  color: var(--nor-fg-1);
+  font-family: var(--nor-font-display);
+  font-size: var(--nor-fs-eyebrow);
+  font-weight: var(--nor-w-medium);
+  letter-spacing: var(--nor-tr-eyebrow);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: var(--nor-radius);
+  transition: background var(--nor-dur-normal) var(--nor-ease),
+              color var(--nor-dur-normal) var(--nor-ease);
+}
+.nor-btn:hover { background: var(--nor-ink); color: var(--nor-yellow); }
+.nor-btn--primary { background: var(--nor-ink); color: var(--nor-yellow); }
+.nor-btn--primary:hover { background: var(--nor-slate-deep); color: var(--nor-yellow); }
+.nor-btn--ghost { border-color: transparent; padding-left: 0; padding-right: 0; }
+.nor-btn--ghost:hover { background: transparent; opacity: 0.6; }
+
+/* ========== Inverse (slate) ========== */
+.nor-inverse {
+  background: var(--nor-bg-inverse);
+  color: var(--nor-fg-on-slate-1);
+}
+.nor-inverse h1, .nor-inverse h2, .nor-inverse h3, .nor-inverse h4,
+.nor-inverse p, .nor-inverse a { color: var(--nor-fg-on-slate-1); }
+.nor-inverse .nor-eyebrow { color: var(--nor-fg-on-slate-2); }
+.nor-inverse .nor-btn { border-color: var(--nor-fg-on-slate-1); color: var(--nor-fg-on-slate-1); }
+.nor-inverse .nor-btn:hover { background: var(--nor-yellow); color: var(--nor-ink); border-color: var(--nor-yellow); }
+
+/* ========== Layout helpers ========== */
+.nor-container {
+  max-width: var(--nor-container);
+  margin: 0 auto;
+  padding-inline: var(--nor-section-x);
+}
+.nor-section { padding-block: var(--nor-section-y); }
+.nor-stack > * + * { margin-top: var(--nor-s-5); }
+.nor-stack-lg > * + * { margin-top: var(--nor-s-7); }
+
+/* ========== Brand circle (signature framing device) ========== */
+.nor-circle {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--nor-yellow);
+}

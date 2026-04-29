@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  
+  <circle cx="120" cy="120" r="115" fill="#F2E07A"></circle>
+  
+  <g stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    
+    <path d="M 50 155 L 50 95 L 95 155 L 95 95"></path>
+    
+    <circle cx="120" cy="125" r="28"></circle>
+    <line x1="100" y1="146" x2="140" y2="104"></line>
+    
+    <path d="M 152 155 L 152 95 L 178 95 Q 195 95 195 112 Q 195 129 178 129 L 152 129 M 178 129 L 198 155"></path>
+  </g>
+  
+  <text x="120" y="190" text-anchor="middle" font-family="Manrope, Helvetica Neue, sans-serif" font-weight="300" font-size="14" fill="#1A1A1A" letter-spacing="8">STATION</text>
+</svg>
