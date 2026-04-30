@@ -186,8 +186,8 @@ body {
   background: var(--nor-paper);
   padding: 28px clamp(24px, 3vw, 36px);
   display: grid;
-  grid-template-columns: 56px 1fr 200px 200px;
-  gap: 24px;
+  grid-template-columns: 56px 1fr 240px;
+  gap: 32px;
   align-items: start;
 }
 @media (max-width: 900px) {
