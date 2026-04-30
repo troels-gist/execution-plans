@@ -373,6 +373,28 @@ body {
 .ns-quad__corner--bl { bottom: 0; left: 0; }
 .ns-quad__corner--br { bottom: 0; right: 0; text-align: right; }
 
+/* Grid overlay (for assigning positions) */
+.ns-grid-line {
+  position: absolute;
+  background: var(--nor-fg-mute);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+.ns-grid-line--v { top: 0; bottom: 0; width: 1px; }
+.ns-grid-line--h { left: 0; right: 0; height: 1px; }
+.ns-grid-label {
+  position: absolute;
+  font-family: var(--nor-font-mono);
+  font-size: 9px;
+  letter-spacing: var(--nor-tr-eyebrow);
+  color: var(--nor-fg-3);
+  pointer-events: none;
+  z-index: 0;
+}
+.ns-grid-label--col { top: 2px; transform: translateX(-50%); }
+.ns-grid-label--row { left: 2px; transform: translateY(-50%); }
+
 .ns-postit {
   position: absolute;
   transform: translate(-50%, -50%);
