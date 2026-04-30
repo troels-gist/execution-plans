@@ -43,6 +43,12 @@ body {
   transition: color var(--nor-dur-fast) var(--nor-ease);
 }
 .ns-nav-links a:hover, .ns-nav-links a.is-active { color: var(--nor-ink); }
+.ns-nav-pdf {
+  border: 1px solid var(--nor-ink);
+  padding: 6px 12px;
+  color: var(--nor-ink) !important;
+}
+.ns-nav-pdf:hover { background: var(--nor-ink); color: var(--nor-yellow) !important; }
 .ns-quarter {
   font-family: var(--nor-font-mono);
   font-size: var(--nor-fs-eyebrow);
@@ -394,6 +400,77 @@ body {
 }
 .ns-grid-label--col { top: 2px; transform: translateX(-50%); }
 .ns-grid-label--row { left: 2px; transform: translateY(-50%); }
+
+/* ============== Print / PDF ============== */
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  html, body { background: var(--nor-paper-warm) !important; }
+  .ns-header { display: none; }
+  .ns-grid-line, .ns-grid-label { display: none; }
+
+  /* Compact intro */
+  .ns-intro { padding: 4mm 0 6mm; }
+  .ns-intro__title { font-size: 28pt; line-height: 1.05; }
+  .ns-intro__eyebrow { margin-bottom: 6px; }
+
+  /* Year objectives */
+  .ns-year { padding: 4mm 0 6mm; }
+  .ns-year__head { padding-top: 8px; margin-bottom: 12px; }
+  .ns-year__title { font-size: 14pt; }
+  .ns-objectives { background: transparent; border: none; gap: 0; }
+  .ns-obj { border: 1px solid var(--nor-fg-mute); padding: 14px 18px; }
+  .ns-obj__title { font-size: 12pt; margin-bottom: 12px; }
+  .ns-obj, .ns-activity { break-inside: avoid; page-break-inside: avoid; }
+
+  /* Plan section */
+  .ns-plan { padding: 2mm 0 4mm; }
+  .ns-plan__head { padding-top: 8px; margin-bottom: 10px; break-after: avoid; page-break-after: avoid; }
+
+  /* Activity cards: no grey-grid hack in print, use borders directly */
+  .ns-activities { background: transparent; border: none; gap: 0; display: block; }
+  .ns-activity {
+    background: transparent;
+    border-top: 1px solid var(--nor-fg-mute);
+    padding: 12px 0;
+    grid-template-columns: 40px 1fr 280px;
+    gap: 18px;
+  }
+  .ns-activity:first-child { border-top: 1px solid var(--nor-ink); }
+  .ns-activity:last-child { border-bottom: 1px solid var(--nor-fg-mute); }
+  .ns-activity__title { font-size: 11pt; margin-bottom: 6px; }
+  .ns-activity__goal, .ns-activity__measure { font-size: 9pt; margin-bottom: 4px; }
+  .ns-conf-cell__pct { font-size: 22pt; }
+  .ns-conf__note { font-size: 9pt; }
+
+  /* Workshop / kvadrant landscape page — hide page intro to fit on one page */
+  body:has(.ns-workshop) .ns-intro { display: none; }
+  .ns-workshop { padding: 0; page-break-inside: avoid; break-inside: avoid; }
+  .ns-workshop .ns-plan__head { margin: 4mm 0 6px; padding-top: 0; border-top: none; }
+  .ns-workshop .ns-year__title { font-size: 18pt; }
+  .ns-quad {
+    aspect-ratio: auto !important;
+    width: 100%;
+    height: 145mm !important;
+    margin-top: 4mm;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .ns-postit {
+    width: 70px !important;
+    height: 70px !important;
+    padding: 5px 7px !important;
+    font-size: 8pt !important;
+    line-height: 1.15 !important;
+    gap: 2px !important;
+  }
+  .ns-postit__id { font-size: 6.5pt !important; }
+  .ns-postit__text { -webkit-line-clamp: 4; }
+  .ns-quad__corner { padding: 4px 8px; font-size: 7pt; }
+  .ns-quad__label { font-size: 7.5pt; }
+  .ns-legend { margin-top: 6px; font-size: 8pt; }
+
+  .ns-exec-foot { padding: 4mm 0 2mm; border-top: 1px solid var(--nor-fg-mute); }
+}
 
 .ns-postit {
   position: absolute;
