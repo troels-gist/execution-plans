@@ -377,8 +377,7 @@ body {
   position: absolute;
   transform: translate(-50%, -50%);
   background: var(--nor-yellow);
-  width: 110px;
-  height: 110px;
+  width: clamp(70px, 8.5vw, 110px);
   aspect-ratio: 1 / 1;
   box-sizing: border-box;
   padding: 8px 10px;
